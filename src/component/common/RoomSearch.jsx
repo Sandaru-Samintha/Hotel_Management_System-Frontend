@@ -25,7 +25,14 @@ const  RoomSearch =({handleSearchResult})=> {
   },[])
   
 
-  const showError = (message,ti)
+  const showError = (message,timeOut = 5000) =>{
+    setError(message);
+    setTimeout(()=>{
+      setError('');
+    },timeOut)
+  };
+
+  
 
 }
 
