@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate,useLocation } from "react-router-dom";
-import ApiService from './apiService';
+import ApiService from './ApiService';
 
 
 //If the user is logged in, it allows access to the page
