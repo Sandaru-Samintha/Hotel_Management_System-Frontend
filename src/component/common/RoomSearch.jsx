@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import DatePicker from 'react-datepicker'
-import 'react-datepicker/dist/react-datepicker.js'
-import ApiService from '../../service/ApiService'
+import { useEffect, useState } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import ApiService from '../../service/ApiService';
 
 const  RoomSearch =({handleSearchResult})=> {
 
@@ -22,6 +22,8 @@ const  RoomSearch =({handleSearchResult})=> {
         
       }
     }
+
+    fetchRoomTypes();
   },[])
   
 
