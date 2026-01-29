@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react';
 import RoomSearch from '../common/RoomSearch';
 
 const HomePage = () => {
@@ -31,6 +31,12 @@ const HomePage = () => {
       {/* SEARCH/FIND AVAILABLE ROOMS SECTION */}
       <RoomSearch handleSearchResult={handleSearchResult}/>
 
+      {roomSearchResults.length > 0 && (
+        <section className="search-results">
+          <h3>Search Results ({roomSearchResults.length})</h3>
+          <pre>{JSON.stringify(roomSearchResults, null, 2)}</pre>
+        </section>
+      )}
 
       <h4><a href="/rooms" className="view-rooms-home">All Rooms</a></h4>
 
