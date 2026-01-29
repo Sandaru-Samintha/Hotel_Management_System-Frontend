@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink, useNavigate } from "react-router-dom";
-import ApiService from '../../service/apiService';
+import ApiService from '../../service/ApiService';
 
 function Navbar() {
 

@@ -8,7 +8,7 @@ const HomePage = () => {
       {/*Header / Banner Room Section */}
       <section>
         <header className='header-banner'>
-          <img src='./assets/images/hotel-image.jpg' alt="Nexus Haven Hotel" className='header-image'/>
+          <img src='./assets/images/hotel-image.webp' alt="Nexus Haven Hotel" className='header-image'/>
           <div className='overlay'></div>
           <div className='animated-texts overlay-content'>
             <h1>
@@ -34,13 +34,6 @@ const HomePage = () => {
           </div>
         </div>
 
-        <div className="service-card">
-          <img src="./assets/images/mini-bar.png" alt="Mini Bar" />
-          <div className="service-details">
-            <h3 className="service-title">Mini Bar</h3>
-              <p className="service-description">Expert on-site air conditioning solutions to keep your space cool and comfortable.</p>
-          </div>
-        </div>
 
         <div className="service-card">
           <img src="./assets/images/mini-bar.png" alt="Mini Bar" />
@@ -71,7 +64,7 @@ const HomePage = () => {
               </p>
           </div>
         </div>
-        
+
       </section>
     </div>
   );
