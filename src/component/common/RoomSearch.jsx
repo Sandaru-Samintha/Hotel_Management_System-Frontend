@@ -32,8 +32,79 @@ const  RoomSearch =({handleSearchResult})=> {
     },timeOut)
   };
 
+
+
+
+  const handleInternalSearch = async () => {
+    if(!startDate || !endDate || !roomType){
+      showError("Please select all fields");
+      return false;
+    }
+
+
+    try {
+      const formattedStartDate = startDate? startDate.toISOString().split('T')[0]:null;
+      const formattedEndDate = endDate ? endDate.toISOString().split('T')[0]:null;
+
+      const response = await ApiService.getAvailableRoomsByDateAndType(formattedStartDate,formattedEndDate,roomType)
+
+      if(response.set)
+
+    } catch (error) {
+      showError(error.response.data.message)
+    }
+  }
+
+
   
 
-}
+  return (
+    <section>
+      <div className="search-container">
+        <div className="search-field">
+          <label>Check-in Date</label>
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => setStartDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Select Check-in Date"
+          />
+        </div>
+
+        <div className="search-field">
+          <label>Check-out Date</label>
+          <DatePicker
+            selected={endDate}
+            onChange={(date) => setEndDate(date)}
+            dateFormat="dd/MM/yyyy"
+            placeholderText="Select Check-out Date"
+          />
+        </div>
+
+        <div className="search-field">
+          <label>Room Type</label>
+          <select value={roomType} onChange={(e) => setRoomType(e.target.value)}>
+            <option disabled value="">
+              Select Room Type
+            </option>
+            {roomTypes.map((roomType) => (
+              <option key={roomType} value={roomType}>
+                {roomType}
+              </option>
+            ))}
+          </select>
+        </div>
+
+        <button className="home-search-button" onClick={handleInternalSearch}>Search Rooms</button>
+
+      </div>
+      
+      {error && <p className="error-message">{error}</p>}
+
+    </section>
+  );
+};
+
+
 
 export default RoomSearch
