@@ -2,9 +2,11 @@ import React from 'react'
 
 const FooterComponent = () => {
   return (
-    <span>
-      Nexus Haven Hotel | All Rights Reserved &copy; {new Date().getFullYear()} 
-    </span>
+    <footer>
+      <span className='my-footer'>
+        Nexus Haven Hotel | All Rights Reserved &copy; {new Date().getFullYear()} 
+      </span>
+    </footer>
   )
 }
 
