@@ -1,50 +1,40 @@
 import React from 'react';
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from 'react-router-dom';
 import ApiService from '../../service/ApiService';
 
 function Navbar() {
+    const isAuthenticated = ApiService.isAuthenticated();
+    const isAdmin = ApiService.isAdmin();
+    const isUser = ApiService.isUser();
+    const navigate = useNavigate();
 
-  const navigate = useNavigate();
+    const handleLogout = () => {
+        const isLogout = window.confirm('Are you sure you want to logout this user?');
+        if (isLogout) {
+            ApiService.logout();
+            navigate('/home');
+        }
+    };
 
-  // Check authentication and roles
-  const isAuthenticated = ApiService.isAuthenticated();
-  const isAdmin = ApiService.isAdmin();
-  const isUser = ApiService.isUser();
+    return (
+        <nav className="navbar">
+            <div className="navbar-brand">
+                <NavLink to="/home">Phegon Hotel</NavLink>
+            </div>
+            <ul className="navbar-ul">
+                <li><NavLink to="/home" activeclassname="active">Home</NavLink></li>
+                <li><NavLink to="/rooms" activeclassname="active">Rooms</NavLink></li>
+                <li><NavLink to="/find-booking" activeclassname="active">Find my Booking</NavLink></li>
 
-  const handleLogout = () => {
-    const isLogout = window.confirm("Are you sure you really want to logout");
-    if (isLogout) {
-      ApiService.logout();
-      navigate('/home')
-    }
-  };
+                {isUser && <li><NavLink to="/profile" activeclassname="active">Profile</NavLink></li>}
+                {isAdmin && <li><NavLink to="/admin" activeclassname="active">Admin</NavLink></li>}
 
-  return (
-    <nav className='navbar'>
-
-      <div className='navbar-brand' >
-        <NavLink to="/home">Nexus Haven Hotel</NavLink>
-      </div>
-
-      <ul className='navbar-ul'>
-        {/* Always visible in home page */}
-        <li><NavLink to="/home" activeclass="active">Home</NavLink></li>
-        <li><NavLink to="/rooms" activeclass="active">Rooms</NavLink></li>
-        <li><NavLink to="/find-booking" activeclass="active">Find My Booking</NavLink></li>
-
-        {isUser && <li><NavLink to="/profile" activeclass="active">Profile</NavLink></li>}
-        {isAdmin && <li><NavLink to="/admin" activeclass="active">Admin</NavLink></li>}
-        
-        {isAuthenticated && <li><NavLink to="/login" activeclass="active">Login</NavLink></li>}
-        {isAuthenticated && <li><NavLink to="/register" activeclass="active">Register</NavLink></li>}
-
-      
-        {isAuthenticated && <li onClick={handleLogout}>Logout</li>}
-        
-
-      </ul>
-    </nav>
-  );
+                {!isAuthenticated &&<li><NavLink to="/login" activeclassname="active">Login</NavLink></li>}
+                {!isAuthenticated &&<li><NavLink to="/register" activeclassname="active">Register</NavLink></li>}
+                {isAuthenticated && <li onClick={handleLogout}>Logout</li>}
+            </ul>
+        </nav>
+    );
 }
 
 export default Navbar;
