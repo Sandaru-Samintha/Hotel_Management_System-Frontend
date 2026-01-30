@@ -79,7 +79,7 @@ const AllRoomsPage = () => {
           <option value="">All</option>
           {roomTypes.map((type) => (
             <option key={type} value={type}>
-              <b>{type}</b>
+              {type}
             </option>
           ))}
         </select>

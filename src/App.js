@@ -5,6 +5,7 @@ import Navbar from './component/common/Navbar';
 import FooterComponent from './component/common/Footer';
 import HomePage from './component/home/HomePage';
 import AllRoomsPage from './component/booking_rooms/AllRoomPage';
+import FindBookingPage from './component/booking_rooms/FindBookingPage';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
           <Route exact path='/home' element={<HomePage/>} />
           <Route exact path='/rooms' element={<AllRoomsPage/>} />
+          <Route exact path='/find-booking' element={<FindBookingPage/>} />
           </Routes>
         </div>
 
