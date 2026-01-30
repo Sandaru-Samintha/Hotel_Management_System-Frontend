@@ -6,6 +6,7 @@ import FooterComponent from './component/common/Footer';
 import HomePage from './component/home/HomePage';
 import AllRoomsPage from './component/booking_rooms/AllRoomPage';
 import FindBookingPage from './component/booking_rooms/FindBookingPage';
+import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
 
 function App() {
   return (
@@ -17,6 +18,8 @@ function App() {
           <Route exact path='/home' element={<HomePage/>} />
           <Route exact path='/rooms' element={<AllRoomsPage/>} />
           <Route exact path='/find-booking' element={<FindBookingPage/>} />
+          <Route exact path='/room-details-book/:roomId' element={<RoomDetailsPage/>} />
+          
           </Routes>
         </div>
 
