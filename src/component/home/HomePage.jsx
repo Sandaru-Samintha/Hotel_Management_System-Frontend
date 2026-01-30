@@ -45,7 +45,7 @@ const HomePage = () => {
           <pre>{JSON.stringify(roomSearchResults, null, 2)}</pre>
         </section>
       )*/}
-
+      <br/>
       <h4><a href="/rooms" className="view-rooms-home">All Rooms</a></h4>
 
       <h2 className="home-services">Services at  <span className="nexus-color">Nexus Haven Hotel</span></h2>

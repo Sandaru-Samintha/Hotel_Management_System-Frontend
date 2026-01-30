@@ -14,8 +14,8 @@
     color: #319055;
     color: #003366;
     color: #36454F;
-    color: #007F86;
-    color: #007F86;
+    color: #0b68e1;
+    color: #0b68e1;
 }
 
 /* General Navbar Styling */
@@ -78,7 +78,7 @@
 .auth-container h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .register-link {
@@ -87,7 +87,7 @@
 }
 
 .register-link a {
-    color: #007F86;
+    color: #0b68e1;
     text-decoration: none;
 }
 
@@ -124,7 +124,7 @@
 button[type="submit"] {
     width: 95%;
     padding: 12px;
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: #fff;
     border: none;
     border-radius: 5px;
@@ -135,7 +135,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-    background-color: rgb(34, 80, 128)
+    background-color: #004186
 }
 
 
@@ -147,7 +147,7 @@ button[type="submit"]:hover {
 
 
 .link-button {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: white;
     padding: 10px;
     border-radius: 5px;
@@ -281,7 +281,7 @@ button[type="submit"]:hover {
 }
 
 .home-search-button:hover {
-    background-color: rgb(34, 80, 128)
+    background-color: #004186
 }
 
 
@@ -318,7 +318,7 @@ button[type="submit"]:hover {
 }
 
 .room-details h3 {
-    color: #007F86;
+    color: #004186;
 }
 
 .room-detail-loading {
@@ -335,7 +335,7 @@ button[type="submit"]:hover {
 }
 
 .book-now-button {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: white;
     border: none;
     margin-right: 10px;
@@ -347,7 +347,7 @@ button[type="submit"]:hover {
 }
 
 .book-now-button:hover {
-    background-color: rgb(34, 80, 128)
+    background-color: #004186
 }
 
 /*View all rooms home section*/
@@ -426,7 +426,7 @@ button[type="submit"]:hover {
 .all-rooms h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .all-room-filter-div {
@@ -434,7 +434,7 @@ button[type="submit"]:hover {
 }
 
 .all-room-filter-div label {
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .filter-select-div {
@@ -490,8 +490,8 @@ button[type="submit"]:hover {
 
 .pagination-button {
     background-color: #fff;
-    color: #007F86;
-    border: 1px solid #007F86;
+    color: #0b68e1;
+    border: 1px solid #0b68e1;
     border-radius: 5px;
     padding: 8px 12px;
     cursor: pointer;
@@ -499,13 +499,13 @@ button[type="submit"]:hover {
 }
 
 .pagination-button:hover {
-    background-color: rgb(34, 80, 128);
+    background-color: #004186;
     color: #fff;
 }
 
 /* Style for the current page button */
 .current-page {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: #fff;
 }
 
@@ -534,7 +534,7 @@ button[type="submit"]:hover {
 }
 
 .book-now-button {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -543,7 +543,7 @@ button[type="submit"]:hover {
 }
 
 .book-now-button:hover {
-    background-color: rgb(34, 80, 128);
+    background-color: #004186;
 }
 
 
@@ -592,7 +592,7 @@ button[type="submit"]:hover {
 }
 
 .confirm-booking {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -623,7 +623,7 @@ button[type="submit"]:hover {
 }
 
 .confirm-booking {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -633,7 +633,7 @@ button[type="submit"]:hover {
 }
 
 .confirm-booking:hover {
-    background-color: rgb(34, 80, 128);
+    background-color: #004186;
 }
 
 .booking-success-message {
@@ -689,7 +689,7 @@ button {
 }
 
 button:hover {
-    background-color: rgb(34, 80, 128);
+    background-color: #004186;
 }
 
 .booking-details {
@@ -723,7 +723,7 @@ p {
     color: #333;
     margin-bottom: 20px;
     font-weight: bold;
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .admin-actions {
@@ -736,7 +736,7 @@ p {
     padding: 15px 30px;
     font-size: 1em;
     color: white;
-    background-color: #007F86;
+    background-color: #0b68e1;
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -745,14 +745,14 @@ p {
 }
 
 .admin-button:hover {
-    background-color: rgb(34, 80, 128);
+    background-color: #004186;
 }
 
 
 
 /* ROOM SEARCH RESULT */
 .book-now-button {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -762,7 +762,7 @@ p {
 }
 
 .edit-room-button {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: white;
     border: none;
     padding: 10px 20px;
@@ -791,7 +791,7 @@ p {
 .edit-room-container h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .error-message {
@@ -884,7 +884,7 @@ h2 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 2em;
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .search-div {
@@ -942,7 +942,7 @@ h2 {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 15px;
-    background: #007F86;
+    background: #0b68e1;
     color: #fff;
     border-radius: 4px;
     text-decoration: none;
@@ -951,7 +951,7 @@ h2 {
 }
 
 .edit-link:hover {
-    background-color: rgb(34, 80, 128);
+    background-color: #004186;
 }
 
 
@@ -988,11 +988,11 @@ h2 {
 .profile-page h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .profile-page h3 {
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .profile-actions {
@@ -1003,7 +1003,7 @@ h2 {
 }
 
 .profile-actions button {
-    background-color: #007F86;
+    background-color: #0b68e1;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -1013,7 +1013,7 @@ h2 {
 }
 
 .profile-actions button:hover {
-    background-color: rgb(34, 80, 128);
+    background-color: #004186;
 }
 
 .profile-details,
@@ -1068,7 +1068,7 @@ h2 {
 .edit-profile-page h2 {
     text-align: center;
     margin-bottom: 20px;
-    color: #007F86;
+    color: #0b68e1;
 }
 
 .profile-details {
@@ -1134,7 +1134,7 @@ h2 {
 
     .auth-container h2 {
         font-size: 24px;
-        color: #007F86;
+        color: #0b68e1;
     }
 
     .form-group input {
@@ -1162,7 +1162,7 @@ h2 {
     }
 
     .book-now-button {
-        background-color: #007F86;
+        background-color: #0b68e1;
         color: white;
         border: none;
         padding: 5px;
