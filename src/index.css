@@ -669,6 +669,13 @@ button[type="submit"]:hover {
 }
 
 
+.search-container {
+    display: flex;           /* Align children in a row */
+    justify-content: center; /* Center them horizontally */
+    align-items: center;     /* Center them vertically */
+    margin-top: 50px;        /* Optional: space from top */
+}
+
 .search-container input[type="text"] {
     padding: 10px;
     font-size: 16px;
@@ -678,7 +685,7 @@ button[type="submit"]:hover {
     width: 300px;
 }
 
-button {
+.search-container button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #1288e9;
@@ -687,6 +694,7 @@ button {
     border-radius: 4px;
     cursor: pointer;
 }
+
 
 button:hover {
     background-color: #004186;
@@ -1174,7 +1182,7 @@ h2 {
     }
 
     .search-container {
-        display: block;
+       display: inline;
     }
 
     .service-section {
