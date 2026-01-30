@@ -37,33 +37,33 @@ const  RoomSearch =({handleSearchResult})=> {
 
 
 
+  /**THis is going to be used to fetch avaailabe rooms from database base on seach data that'll be passed in */
   const handleInternalSearch = async () => {
-    if(!startDate || !endDate || !roomType){
-      showError("Please select all fields");
+    if (!startDate || !endDate || !roomType) {
+      showError('Please select all fields');
       return false;
     }
-
-
     try {
-      const formattedStartDate = startDate? startDate.toISOString().split('T')[0]:null;
-      const formattedEndDate = endDate ? endDate.toISOString().split('T')[0]:null;
+      
+      // Convert startDate to the desired format
+      const formattedStartDate = startDate ? startDate.toISOString().split('T')[0] : null;
+      const formattedEndDate = endDate ? endDate.toISOString().split('T')[0] : null;
+      // Call the API to fetch available rooms
+      const response = await ApiService.getAvailableRoomsByDateAndType(formattedStartDate, formattedEndDate, roomType);
 
-      const response = await ApiService.getAvailableRoomsByDateAndType(formattedStartDate,formattedEndDate,roomType)
-
-      if(response.setStatusCode === 200){
-        if(response.rooList.length === 0){
-          showError("Room Not Currently Available for the type and selected date range")
-          return;
+      // Check if the response is successful
+      if (response.statusCode === 200) {
+        if (response.roomList.length === 0) {
+          showError('Room not currently available for this date range on the selected rom type.');
+          return
         }
-
-        handleSearchResult(response.rooList);
-        setError('')
+        handleSearchResult(response.roomList);
+        setError('');
       }
-
     } catch (error) {
-      showError(error.response.data.message)
+      showError("Unown error occured: " + error.response.data.message);
     }
-  }
+  };
 
 
   
