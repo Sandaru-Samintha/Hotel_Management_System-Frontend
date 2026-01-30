@@ -89,8 +89,8 @@ const RoomDetailsPage = () => {
 
 
       // Log the original dates for debugging
-      console.log("Formated Check-in Date:", formattedCheckInDate);
-      console.log("Formated Check-out Date:", formattedCheckOutDate);
+      console.log("Formatted Check-in Date:", formattedCheckInDate);
+      console.log("Formatted Check-out Date:", formattedCheckOutDate);
 
       // Create booking object
       const booking = {
