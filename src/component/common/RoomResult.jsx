@@ -14,7 +14,7 @@ const RoomResult = ({roomSearchResults})=>{
               <img src={room.roomPhotoUrl} alt={room.roomType} className="room-list-item-image" />
               <div className="room-details">
                 <h3>{room.roomType}</h3>
-                <p>Price:LKR{room.roomPrice} / night </p>
+                <p>Price:LKR.{room.roomPrice} / night </p>
                 <p>Description: {room.roomDescription}</p>
               </div>
 
