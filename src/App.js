@@ -10,6 +10,7 @@ import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
 import LoginPage from './component/auth/LoginPage';
 import RegisterPage from './component/auth/RegisterPage';
 import ProfilePage from './component/profile/ProfilePage';
+import EditProfilePage from './component/profile/EditProfilePage';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
           <Route exact path='/login' element={<LoginPage/>} />
           <Route exact path='/register' element={<RegisterPage/>} />
           <Route exact path='/profile' element={<ProfilePage/>} />
+          <Route exact path='/edit-profile' element={<EditProfilePage/>} />
           
           </Routes>
         </div>
