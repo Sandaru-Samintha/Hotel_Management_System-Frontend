@@ -12,6 +12,12 @@ import RegisterPage from './component/auth/RegisterPage';
 import ProfilePage from './component/profile/ProfilePage';
 import EditProfilePage from './component/profile/EditProfilePage';
 import { ProtectedRoute,AdminRoute } from "./service/guard";
+import AdminPage from './component/admin/AdminPage';
+import ManageRoomPage from './component/admin/ManageRoomPage';
+import ManageBookingsPage from './component/admin/ManageBookingPage';
+import AddRoomPage from './component/admin/AddRoomPage';
+import EditRoomPage from './component/admin/EditRoomPage';
+import EditBookingPage from './component/admin/EditBookingPage';
 
 function App() {
   return (
@@ -34,7 +40,13 @@ function App() {
           <Route exact path='/edit-profile' element={<ProtectedRoute element={<EditProfilePage/>}/>} />
 
           {/* ADMIN AUTH ROUTER*/}
-
+          <Route exact path='/admin' element={<AdminRoute element={<AdminPage/>}/>} />
+          <Route exact path='/admin/manage-rooms' element={<AdminRoute element={<ManageRoomPage/>}/>} />
+          <Route exact path='/admin/manage-bookings' element={<AdminRoute element={<ManageBookingsPage/>}/>} />
+          <Route exact path='/admin/add-room' element={<AdminRoute element={<AddRoomPage/>}/>} />
+          <Route exact path='admin/edit-room/:roomId' element={<ProtectedRoute element={<EditRoomPage/>}/>} />
+          <Route exact path='admin/edit-booking/:bookingCode' element={<ProtectedRoute element={<EditBookingPage/>}/>} />
+          
 
 
 

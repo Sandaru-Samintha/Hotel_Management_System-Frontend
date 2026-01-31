@@ -61,10 +61,52 @@
   color: #006eff;
   
 }
-
-.navbar-ul li a.active {
-    color: #006eff;
+.logout-item {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  color: red; /* red */
+  font-size: 30px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
 }
+
+.logout-item:hover {
+  background-color: rgba(220, 38, 38, 0.326);
+}
+
+.nav-icon {
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    color: blue; 
+    font-size: 30px;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.nav-icon:hover {
+    background-color: #006eff90;;
+}
+
+
+.nav-link.active1 .nav-icon {
+  background-color: #006eff90; /* Background color when active */
+}
+
+
+
+.navbar-ul li a.active  {
+    color: #006eff;
+    
+}
+
 
 .auth-container {
     max-width: 400px;
@@ -446,6 +488,12 @@ button[type="submit"]:hover {
     float: right;
     margin-right: 70px;
     font-weight: 600;
+     background-color: #0b68e1;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .all-room-filter-div label {
@@ -779,6 +827,7 @@ p {
 
 
 
+
 /* ROOM SEARCH RESULT */
 .book-now-button {
     background-color: #0b68e1;
@@ -798,6 +847,7 @@ p {
     border-radius: 5px;
     cursor: pointer;
     margin-right: 10px;
+    font-weight: bold;
 }
 
 .book-now-button:hover,
@@ -992,7 +1042,12 @@ h2 {
     background-color: rgb(164, 16, 16);
     color: #fff;
     font-size: 20px;
-    font-weight: 800;
+    font-weight: 600;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .acheive-booking:hover {

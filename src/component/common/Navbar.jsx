@@ -1,6 +1,8 @@
 import React from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import ApiService from '../../service/ApiService';
+import { CgProfile } from "react-icons/cg";
+import { TbLogout } from "react-icons/tb";
 
 function Navbar() {
     const isAuthenticated = ApiService.isAuthenticated();
@@ -26,12 +28,12 @@ function Navbar() {
                 <li><NavLink to="/rooms" activeclassname="active">Rooms</NavLink></li>
                 <li><NavLink to="/find-booking" activeclassname="active">Find my Booking</NavLink></li>
 
-                {isUser && <li><NavLink to="/profile" activeclassname="active">Profile</NavLink></li>}
+                {isUser && (<li className="nav-item"><NavLink to="/profile"className={({ isActive }) => (isActive ? "nav-link active1":"nav-link")}><CgProfile className="nav-icon" /></NavLink></li>)}
                 {isAdmin && <li><NavLink to="/admin" activeclassname="active">Admin</NavLink></li>}
 
                 {!isAuthenticated &&<li><NavLink to="/login" activeclassname="active">Login</NavLink></li>}
                 {!isAuthenticated &&<li><NavLink to="/register" activeclassname="active">Register</NavLink></li>}
-                {isAuthenticated && <li onClick={handleLogout}>Logout</li>}
+                {isAuthenticated && <li  onClick={handleLogout}><TbLogout className="logout-item"/></li>}
             </ul>
         </nav>
     );

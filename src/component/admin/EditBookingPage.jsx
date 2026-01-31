@@ -79,7 +79,7 @@ const EditBookingPage = () => {
                         <p> Room Type: {bookingDetails.room.roomType}</p>
                         <p> Room Price: ${bookingDetails.room.roomPrice}</p>
                         <p> Room Description: {bookingDetails.room.roomDescription}</p>
-                        <img src={bookingDetails.room.roomPhotoUrl} alt="" sizes="" srcSet="" />
+                        <img style={{maxWidth: '100%',height: 'auto',borderRadius: '8px'}}src={bookingDetails.room.roomPhotoUrl} alt="" sizes="" srcSet="" />
                     </div>
                     <button
                         className="acheive-booking"
