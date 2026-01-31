@@ -9,6 +9,7 @@ import FindBookingPage from './component/booking_rooms/FindBookingPage';
 import RoomDetailsPage from './component/booking_rooms/RoomDetailsPage';
 import LoginPage from './component/auth/LoginPage';
 import RegisterPage from './component/auth/RegisterPage';
+import ProfilePage from './component/profile/ProfilePage';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route exact path='/room-details-book/:roomId' element={<RoomDetailsPage/>} />
           <Route exact path='/login' element={<LoginPage/>} />
           <Route exact path='/register' element={<RegisterPage/>} />
+          <Route exact path='/profile' element={<ProfilePage/>} />
           
           </Routes>
         </div>
