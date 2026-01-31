@@ -7,7 +7,6 @@ import ApiService from './ApiService';
 //If the user is NOT logged in, it redirects them to the login page
 
 export const ProtectedRoute =({element:Component})=>{
-
                                       
                                     // useLocation() gets the current URL location  // This helps us remember where the user was trying to go
   const location = useLocation();
@@ -16,7 +15,7 @@ export const ProtectedRoute =({element:Component})=>{
                                         - returns true if user is logged in
                                         - returns false if user is NOT logged in
                                       */
-  return ApiService.isAdmin()?(
+  return ApiService.isAuthenticated()?(
                                     // If user IS Admin:  // allow access to the requested component/page
     Component
   ):(

@@ -11,10 +11,19 @@ const ProfilePage = () => {
         const fetchUserProfile = async () => {
             try {
                 const response = await ApiService.getUserProfile();
-                // Fetch user bookings using the fetched user ID
-                const userPlusBookings = await ApiService.getUserBookings(response.user.id);
-                setUser(userPlusBookings.user)
 
+                // Fetch user bookings using user ID
+                const userPlusBookings = await ApiService.getUserBookings(
+                    response.user.id
+                );
+
+                // ✅ Normalize data (VERY IMPORTANT)
+                const normalizedUser = {
+                    ...userPlusBookings.user,
+                    bookings: userPlusBookings.user.bookings || []
+                };
+
+                setUser(normalizedUser);
             } catch (error) {
                 setError(error.response?.data?.message || error.message);
             }
@@ -35,11 +44,18 @@ const ProfilePage = () => {
     return (
         <div className="profile-page">
             {user && <h2>Welcome, {user.name}</h2>}
+
             <div className="profile-actions">
-                <button className="edit-profile-button" onClick={handleEditProfile}>Edit Profile</button>
-                <button className="logout-button" onClick={handleLogout}>Logout</button>
+                <button className="edit-profile-button" onClick={handleEditProfile}>
+                    Edit Profile
+                </button>
+                <button className="logout-button" onClick={handleLogout}>
+                    Logout
+                </button>
             </div>
+
             {error && <p className="error-message">{error}</p>}
+
             {user && (
                 <div className="profile-details">
                     <h3>My Profile Details</h3>
@@ -47,18 +63,42 @@ const ProfilePage = () => {
                     <p><strong>Phone Number:</strong> {user.phoneNumber}</p>
                 </div>
             )}
+
             <div className="bookings-section">
                 <h3>My Booking History</h3>
+
                 <div className="booking-list">
-                    {user && user.bookings.length > 0 ? (
+                    {user?.bookings?.length > 0 ? (
                         user.bookings.map((booking) => (
                             <div key={booking.id} className="booking-item">
-                                <p><strong>Booking Code:</strong> {booking.bookingConfirmationCode}</p>
-                                <p><strong>Check-in Date:</strong> {booking.checkInDate}</p>
-                                <p><strong>Check-out Date:</strong> {booking.checkOutDate}</p>
-                                <p><strong>Total Guests:</strong> {booking.totalNumOfGuest}</p>
-                                <p><strong>Room Type:</strong> {booking.room.roomType}</p>
-                                <img src={booking.room.roomPhotoUrl} alt="Room" className="room-photo" />
+                                <p>
+                                    <strong>Booking Code:</strong>{' '}
+                                    {booking.bookingConfirmationCode}
+                                </p>
+                                <p>
+                                    <strong>Check-in Date:</strong>{' '}
+                                    {booking.checkInDate}
+                                </p>
+                                <p>
+                                    <strong>Check-out Date:</strong>{' '}
+                                    {booking.checkOutDate}
+                                </p>
+                                <p>
+                                    <strong>Total Guests:</strong>{' '}
+                                    {booking.totalNumOfGuest}
+                                </p>
+                                <p>
+                                    <strong>Room Type:</strong>{' '}
+                                    {booking.room?.roomType || 'N/A'}
+                                </p>
+
+                                {booking.room?.roomPhotoUrl && (
+                                    <img
+                                        src={booking.room.roomPhotoUrl}
+                                        alt="Room"
+                                        className="room-photo"
+                                    />
+                                )}
                             </div>
                         ))
                     ) : (
