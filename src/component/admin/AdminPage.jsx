@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import ApiService from '../../service/ApiService';
 
-const AdminPage = () => {
+function AdminPage() {
     const [adminName, setAdminName] = useState('');
     const navigate = useNavigate();
 
@@ -10,7 +10,12 @@ const AdminPage = () => {
         const fetchAdminName = async () => {
             try {
                 const response = await ApiService.getUserProfile();
-                setAdminName(response.user.name);
+                // Make sure response has the expected structure
+                if (response && response.user && response.user.name) {
+                    setAdminName(response.user.name);
+                } else {
+                    console.warn('Unexpected response structure:', response);
+                }
             } catch (error) {
                 console.error('Error fetching admin details:', error.message);
             }
@@ -21,12 +26,20 @@ const AdminPage = () => {
 
     return (
         <div className="admin-page">
-            <h1 className="welcome-message">Welcome, {adminName}</h1>
+            <h1 className="welcome-message">
+                {adminName ? `Welcome, ${adminName}` : 'Welcome, Admin'}
+            </h1>
             <div className="admin-actions">
-                <button className="admin-button" onClick={() => navigate('/admin/manage-rooms')}>
+                <button
+                    className="admin-button"
+                    onClick={() => navigate('/admin/manage-rooms')}
+                >
                     Manage Rooms
                 </button>
-                <button className="admin-button" onClick={() => navigate('/admin/manage-bookings')}>
+                <button
+                    className="admin-button"
+                    onClick={() => navigate('/admin/manage-bookings')}
+                >
                     Manage Bookings
                 </button>
             </div>
